@@ -15,4 +15,7 @@ URL=f"https://api.openweathermap.org/data/2.5/weather?q={location}&appid={API_KE
 
 resp=requests.get(URL).json()
 
-print(resp['weather'])
+print("temp",resp['main']['temp'])
+print("temp_min",resp['main']['temp'])
+print("temp_max",resp['main']['temp'])
+print("description",resp['weather'][0]['description'])

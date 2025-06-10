@@ -3,9 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather app</title>
 </head>
 <body>
-    
+    <h2>Welcome to the weather app</h2>
+
+    <form action="{% url 'weather-app' %}" method="post">
+        {% csrf_token %}
+        <label for="location">Enter location:</label>
+        <input type="text" name="location" id="location">
+        <button type="submit">enter</button>
+    </form>
+    {% if results %}
+        <h2>Weather Report:</h2>
+        <p>The temperature in degrees is: {{ results.temp}}C</p>
+        <p>Min temperature: {{ results.min_temp }}C</p>
+        <p>Max temperature: {{ results.max_temp }}C</p>
+        <p>Description: {{ results.description }}</p>
+    {% endif %}
 </body>
 </html>
