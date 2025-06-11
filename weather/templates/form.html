@@ -37,6 +37,10 @@
                 <p><strong>Description:</strong> {{ results.description|title }}</p>
             </div>
             {% endif %}
+
+            {% if err %}
+                <h4>{{err}}</h4>
+            {% endif %}
         </div>
     </div>
 
