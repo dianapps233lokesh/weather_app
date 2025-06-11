@@ -11,7 +11,7 @@ def weather_view(request):
             API_KEY = os.getenv('API_KEY')
             URL=f"https://api.openweathermap.org/data/2.5/weather?q={location}&appid={API_KEY}"
             resp=requests.get(URL).json()
-            print(resp)
+            # print(resp)
             params={}
             params['temp']=resp['main']['temp']-273
             params['min_temp']=resp['main']['temp_min']-273
